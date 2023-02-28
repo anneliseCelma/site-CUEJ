@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content">
+        <a href="index.php?page=page&action=read">Toutes les pages</a>
+        <a href="index.php?page=page&action=new">Créer une pages</a>
+        {# {{dump(pages)}} #}
+        {% for p in pages %}
+            <p>{{p.nom}}</p>
+            <p>{{p.resume}}</p>
+            <a href="index.php?page=page&action=read&id={{p.id}}">👁️</a>
+            <a href="index.php?page=page&action=edit&id={{p.id}}">🖋️</a>
+            <a href="index.php?page=page&action=delete&id={{p.id}}">X</a>
+        {% endfor %}
+    </main>
+{% endblock main %}
