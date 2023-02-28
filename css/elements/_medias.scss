@@ -1,0 +1,27 @@
+.container-medias {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    &__item{
+
+        & img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+
+        & p {
+            display: block;
+            width: fit-content;
+        }
+
+        &__delete {
+            cursor: pointer;
+            position: relative;
+            left: -50%;
+            padding: 5px;
+            background: rgb(255, 255, 255);
+            max-width: 100%;
+        }
+    }
+}
