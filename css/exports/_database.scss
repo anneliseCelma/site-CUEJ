@@ -1,0 +1,79 @@
+.pre-visual__item {
+
+    &--p {
+        // Style des p
+        font-size:1rem;
+    }
+
+    &--blockquote {
+        // Style des blockquote
+        font-size: 2rem;
+        text-align: center;
+        font-weight: $fw-bold;
+        font-style: italic;
+        font-family: 'Satoshi';
+        position:relative;
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+    &--blockquote::before{
+        font-family:'Satoshi';
+        content: "\201C";
+        color:#78C0A8;
+        font-size:4em;
+        position: absolute;
+        left: 110px;
+        top: -33px;
+        z-index: -1;
+    }
+
+    &--h2 {
+        font-size:2.5rem;
+        font-weight: $fw-bold;
+        font-family: 'Satoshi';
+    }
+    &--h2::before{
+        content: '';
+          border-left: 6px solid #E89DB6;
+          padding-right:10px;
+    }
+
+    &--a{
+        font-size:1rem;
+        color:black; //metttre la couleur de la page?
+    }
+    &--a:hover{
+        color:blue; //ou mettre la couleur de la page ici ?
+    }
+}
+
+q{
+    font-style: italic;
+}
+b{
+    font-weight: $fw-bold;
+}
+
+.class-test {
+    color : red;
+}
+
+.scd-class-test {
+    color : blue;
+}
+
+.img-petit-right{
+    width:25%;
+    float:right;
+}
+.img-petit_left{
+    width:25%;
+    float:left;
+}
+
+.img-moyen{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    display: block;
+}
