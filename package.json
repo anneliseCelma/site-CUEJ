@@ -1,0 +1,15 @@
+{
+  "name": "cuej-religion",
+  "version": "1.0.0",
+  "description": "package for the cuej website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Les zinzins",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.55.0"
+  },
+  "devDependencies": {}
+}
