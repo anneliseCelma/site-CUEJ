@@ -1,0 +1,34 @@
+/* SECTION 1 */
+.themeSection{
+    width:100%;
+    height: 100vh;
+    background-image: url(/public/svg/background.svg);
+    background-size : cover;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap : 3rem;
+
+  
+    &__title{
+        font-weight : $fw-black;
+        font-family: 'Satoshi';
+        font-size: 6.25rem;
+        width : 500px;
+        margin-left : 12rem;
+        background:-webkit-linear-gradient(90deg, rgba(232,157,182,1) 0%, rgba(232,157,182,1) 3%, rgba(235,158,154,1) 37%, rgba(239,159,122,1) 59%, rgba(244,160,74,1) 100%, rgba(0,212,255,1) 100%);;
+        background-clip:text;
+        -webkit-background-clip:text;
+        color:transparent;
+      }
+    &__chapo{
+      width:50%;
+      color:$white;
+      margin-left : 12rem;
+      line-height : 2rem;
+  
+    }
+  
+    }
+
+

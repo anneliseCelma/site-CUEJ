@@ -1,0 +1,52 @@
+
+.titleArtSection{
+    width:100%;
+    height: 100vh;
+    background-image: url(/public/img/angel-church.png);
+
+    &_title{
+        font-family: 'Satoshi';
+        font-size: 2.5rem;
+        width : 500px;
+        position : absolute;
+         left : 100px;
+        margin-top : 40vh; 
+        color: white;
+    
+    }
+    &___chapo{
+        position: absolute;
+        left : 100px;
+        margin-top :65vh;
+        width:50%;
+        color: white;
+    
+    }
+    &__auteur{
+        position: absolute;
+        left : 100px;
+        margin-top :80vh;
+        width:50%;
+        color: white;
+    }
+    
+
+} 
+
+.colorRectangle{
+    height: 100vh;
+    width:100px;
+    background:-webkit-linear-gradient(90deg, rgba(232,157,182,0.35) 0%, rgba(232,157,182,0.35) 3%, rgba(235,158,154,0.75) 37%, rgba(239,159,122,0.75) 59%, rgba(244,160,74,0.35) 100%, rgba(0,212,255,0.35) 100%);;
+    float: right;
+
+}
+
+
+  .border-white{
+    border-bottom: solid white 3px;
+    width:100px;
+    padding-top:77vh;
+    left : 100px;
+    position:absolute;
+
+}  

@@ -1,0 +1,132 @@
+
+/* SECTION 3 */
+
+.sectionChimere{
+    background: linear-gradient(270deg, #6DCCE8 7.1%, #F10CF5 81.22%);
+    width:100%;
+    height: 100vh;
+
+    & img {
+        padding: 64px;
+        cursor: pointer;
+    }
+    
+    &__sidebar {
+        width: 100vw;
+        height : 100vh;
+        max-width: 100%;
+        position: absolute;
+        background-color: $blackSeeTrough;
+        color : $white;
+        display: flex;
+        justify-content: space-between;
+        padding: 8rem;
+        left: -100vw;
+        transition: all .3s ease-in;   
+
+        &--show {
+            left: 0;
+        }
+
+        & img {
+            position: absolute;
+            padding: 4rem;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+
+        &__row-home {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            & h4 {
+                font-family: 'Satoshi', sans-serif;
+                font-weight: $fw-bold;
+                font-size : 2rem;
+                line-height: 3rem;
+            }
+
+            & p {
+                line-height: 2rem;
+            }
+        }
+
+        & hr {
+            width: 1px;
+            background-color: $white;
+            height: 100%;
+        }
+        
+        &__row-article {
+            margin: auto 0;
+            margin-left: 4rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 8rem;
+            grid-row-gap: 6rem;
+
+            & a {
+                color: $white;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            
+            &__item {
+                margin: 1rem 0;
+                
+                & h3 {
+                    font-family: 'Satoshi', sans-serif;
+                    font-weight: $fw-bold;
+                    font-size : 2rem;
+                    text-transform: uppercase;
+                }
+
+
+
+                &__list li {
+                    font-family: 'Satoshi', sans-serif;
+                    font-weight: $fw-regular;
+                    font-size : 1rem;
+                    text-transform: none;
+                }
+            }
+
+            &__item p {
+                line-height: 2rem;
+            }
+        }
+
+        &__absolute-gradient {
+            position: absolute;
+            height: 100vh;
+            right: 0;
+            top: 0;
+            width: 32px;
+        }
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+    
+        & h2{
+            font-family: 'Satoshi', sans-serif;
+            font-weight: $fw-black;
+            font-size : 2rem;
+            line-height: 3rem;
+    
+        }
+        & p {
+            line-height : 1.75rem;
+        }
+    }
+    &__resume{
+        width:60%;
+    }
+}

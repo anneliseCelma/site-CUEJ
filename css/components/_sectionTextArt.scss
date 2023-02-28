@@ -1,0 +1,198 @@
+.sectionText{
+  padding : 50px 0;
+ 
+  & p {
+    margin-bottom : 1.6rem;
+    font-weight : $fw-light;
+    line-height : 1.5rem;
+    font-family: "Epilogue", sans-serif;
+  }
+
+  & h3 {
+    font-size : 2rem;
+    font-weight : $fw-bold;
+    margin-top : 2rem;
+    margin-bottom : 1.3rem;
+    border-left: 5px solid $pink;
+    height: 3rem;
+    display : flex;
+    align-items : center;
+    padding : 15px;
+    }
+
+  &__exergue{
+    text-align: center;
+    margin: 2.2rem auto;
+    position: relative;
+    width:60%;
+    font-weight : $fw-bold !important;
+    font-size : 1.7rem;
+    line-height : 2rem !important;  
+    z-index: 10;
+    
+    &:before {
+      content:url(/public/svg/guillemet.svg) ;
+      z-index : -10;
+      position : absolute;
+      top : -50px;
+      left : -20px;
+      
+    }
+  }
+}
+
+.progress {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+
+  &__bar {
+    height: 5px;
+    background: $violet;
+    width: 0%;
+    transition: width .2s ;
+  }
+}
+
+
+
+
+
+.article {
+  
+  &__header {
+    height: 100vh;
+    background-size : cover;
+    display: flex;
+    justify-content: center;
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap : 1rem;
+        height: 100%;
+        width: 1040px;
+
+        & * {
+          max-width: 722px;
+        }
+
+        & h1 {
+          font-size: 4rem;
+          font-family: Satoshi;
+          font-weight: $fw-bold;
+          color: #fff;
+          line-height: 82px;
+        }
+    
+        & p {
+          font-size: 19px;
+          font-weight: $fw-regular;
+          color: #fff;
+          font-family: 'Epilogue';
+          font-style: normal;
+          font-size: 19px;
+          line-height: 30px;
+        }
+
+        & hr {
+          width: 200px;
+          height: 2px;
+          background-color: $white;
+        }
+
+        &__auteur {
+          font-style: italic;
+        }
+      }
+  }
+
+  &__container {
+
+    &__item {
+      margin: auto;
+      width: 70%;
+
+      &--blockquote {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: $fw-bold;
+        font-style: italic;
+        font-family: 'Satoshi';
+        line-height: 2.5rem;
+        position:relative;
+        padding-left: 150px;
+        padding-right: 150px;
+        margin-top:50px;
+        margin-bottom:50px;
+      }
+      &--blockquote::before{
+        font-family:'Satoshi';
+        content: "\201C";
+        color:#78C0A8;
+        font-size:4em;
+        position: absolute;
+        left: 110px;
+        z-index: -1;
+      }
+
+      &--h2{
+        font-size:2.5rem;
+        font-weight: $fw-bold;
+        font-family: 'Satoshi';
+        margin-top:35px;
+        margin-bottom:25px;
+      }
+
+      &--h2::before{
+        content: '';
+          border-left: 6px solid #E89DB6;
+          padding-right:10px;
+      }
+
+      &--p{
+        font-size:1rem;
+        line-height: 1.5rem;
+        margin-top:10px;
+        margin-bottom:10px;
+        font-weight: $fw-light;
+      }
+
+      &--a{
+        font-size:1rem;
+        color:blue;
+      }
+
+      &--a:hover{
+        color:#E89DB6;
+      }
+
+      &--img{
+        border: 2px solid red;
+      }
+
+      &--figure{
+        background-color: #F6CFC3;
+        padding:20px 20px 30px 20px;
+      }
+
+      &--figure__img{
+      }
+      
+      &--figure__caption{
+        font-size:0.75rem;
+        line-height: 1rem;
+        // width: 50%;
+        margin: auto;
+        margin-top: 20px;
+      }
+      
+
+    }
+  }
+}
+
+
+
