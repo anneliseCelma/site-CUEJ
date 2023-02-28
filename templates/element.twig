@@ -1,0 +1,36 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+        <div class="action-button">
+            <a href="./index.php?page=element&action=read"><img src="./public/svg/chevron_left.svg" alt="<"></a>
+            <div class="action-button--right">
+                <a href="index.php?page=element&action=read&id={{element.id}}"><img src="./public/svg/link.svg" alt="Voir"></a>
+                <a href="index.php?page=element&action=edit&id={{element.id}}"><img src="./public/svg/edit.svg" alt="Modifier"></a>
+                <a href="index.php?page=element&action=delete&id={{element.id}}"><img src="./public/svg/delete.svg" alt="Supprimer"></a> 
+            </div>
+        </div>
+        <div class="dynamic-element dynamic-element--no-border">
+            <div class="container-dynamic-element__item">
+                {% if element.balise == "img" and element.text is not empty %}
+                    <figure {% if element.css is not empty %}style="{{element.css}}"{% endif %} class="generated--figure">
+                        <{{element.balise}} src="{{element.src}}" alt="{{element.alt}}">
+                        <figcaption>{{element.text}}</figcaption>
+                    </figure>
+                {% elseif element.balise == "img" %}
+                    <{{element.balise}} src="{{element.src}}" alt="{{element.alt}}"  class="generated--{{element.balise}}" {% if element.css is not empty %}style="{{element.css}}"{% endif %}>
+                {% elseif element.balise == "a" %}
+                    <{{element.balise}} href="{{element.href}}" class="generated--{{element.balise}}">
+                        {{element.text}}
+                    </{{element.balise}}>
+                {% elseif element.balise == "blockquote" %}
+                    <{{element.balise}} class="generated--{{element.balise}}" {% if element.href is not empty %}cite="{{element.href}}"{% endif %}>
+                        <p>{{element.text}}</p>
+                    </{{element.balise}}>
+                {% else %}
+                    <{{element.balise}} class="generated--{{element.balise}}"  {% if element.css is not empty %}style="{{element.css}}"{% endif %}>{{element.text}}</{{element.balise}}>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock main %}

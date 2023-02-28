@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+	<main class="container-content">
+		<h1 class="form-h1">Modifier l'article
+			{{article.titre}}</h1>
+		<p class="form-chapo">Ici vous pouvez modifier l'élement
+			{{article.titre}}</p>
+		<form action="index.php?page=article&action=update" method="post" class="form" id="dynamicForm">
+			<input type="text" name="id" value="{{article.id}}" style="display: none;">
+			<input type="text" name="nom" id="toAnalyseInput" placeholder="Titre de l'article" value="{{article.nom}}">
+			<input type="text" name="chapo" id="toAnalyseInput" placeholder="Sous titre de l'article" value="{{article.chapo}}">
+			<input type="text" name="auteur" id="toAnalyseInput" placeholder="Auteur de l'article" value="{{article.auteur}}">
+			<input type="text" name="id_couleur" id="toAnalyseInput" value="{{article.id_couleur}}" style="display: none;">
+			<input type="submit" name="update" value="Modifier">
+		</form>
+	</main>
+{% endblock main %}

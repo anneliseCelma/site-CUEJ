@@ -1,0 +1,122 @@
+{% extends 'base.twig' %}
+
+
+{# <div class="main-content">
+    <div class="main-content__floating-square" id="floatingSquare">
+    </div>
+</div> #}
+{# <a href="index.php?page=page&action=read">Toutes les pages</a>
+<a href="index.php?page=page&action=new">Créer une page</a>
+{# {{dump(pages)}} #}
+
+
+	{% block main %}
+	<main class="full-width"> 
+	<!-- SECTION 1 - CHURCH -->
+		<section class="sectionChurch" id="sectionChurch">
+			<div class="sectionChurch__divTitle">
+				<h1 class="sectionChurch__title">Société, religion et politique</h1>
+			</div>
+			<div class="sectionChurch__floatingSquare" id="floatingSquare"> 
+				<a href="#sectionChimere">
+					<div class="sectionChurch__floatingSquare__arrowAnim">
+						<div class="sectionChurch__floatingSquare__arrowAnim__arrowSliding">
+							<div class="sectionChurch__floatingSquare__arrowAnim__arrow"></div>
+						</div>
+						<div class="sectionChurch__floatingSquare__arrowAnim__arrowSliding sectionChurch__floatingSquare__arrowAnim__delay1">
+							<div class="sectionChurch__floatingSquare__arrowAnim__arrow"></div>
+						</div>
+						<div class="sectionChurch__floatingSquare__arrowAnim__arrowSliding sectionChurch__floatingSquare__arrowAnim__delay2">
+							<div class="sectionChurch__floatingSquare__arrowAnim__arrow"></div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="sectionChurch__floatingSquare--border" id="floatingSquareBorder"></div>
+		<div class="vertical-text">
+			<p class="vertical-text__text">
+				<span class="vertical-text__number">01-</span>
+				Réalisé par le CUEJ Strasbourg
+			</p>
+		</div>
+	</section>
+	<!-- SECTION 2 - EDITO -->
+	<!-- <section class="sectionEdito" id="sectionEdito">
+
+		<div class="vertical-text">
+			<p class="vertical-text vertical-text__text--white">
+				<span class="vertical-text__number ">02-</span>
+				Réalisé par le CUEJ Strasbourg
+			</p>
+		</div>
+
+		<div class="circle" data-aos="zoom-in"></div>
+		<div data-aos="fade-up" data-aos-anchor-placement="bottom" class="sectionEdito__div ">
+			<h2 class="sectionEdito__div__title">Edito :</h2>
+			<p class="sectionEdito__div__text">Moriendi quos dictu inferos fortuna diebus e celeberrimos vesperum talis diem vel ex est difficile vita quam senatu ob est abstulit ad sensum rem alto fuit et multis autem de videtis quos quidem Scipioni est laetissimosque talis vel suspicentur P videatur tam ob ut quidem ex quid a fuit vel. est difficile vita quam senatu ob est abstulit ad sensum rem alto fuit et multis autem de videtis quos quidem Scipioni est laetissimosque talis vel suspicentur P videatur tam ob ut quidem ex quid a fuit vel. est difficile vita quam senatu ob est abstulit ad sensum rem alto fuit et multis autem de videtis</p>
+		</div>
+	</section>
+
+
+	<!-- SECTION 3 - CHIMERE -->
+	<!-- <section class="sectionChimere" id="sectionChimere">
+			
+			<div class="vertical-text">
+			<p class="vertical-text vertical-text__text--white">
+				<span class="vertical-text__number ">03-</span>
+			</p>
+		</div>
+		
+
+		<div class="sectionChimere__sidebar" id="sideBar">
+			<img src="./public/svg/close.svg" alt="=" id="closeSideBarMenu">
+			<div class="sectionChimere__sidebar__row-home">
+				<div>
+					<h4>ACCUEIL</h4>
+					<h4>SOMMAIRE</h4>
+				</div>
+				<div>
+					<p>Mentions légales</p>
+					<p>Crédits</p>
+				</div>
+			</div>
+			<hr/>
+			<div class="sectionChimere__sidebar__row-article">
+				{% for p in pages %}
+					<div class="sectionChimere__sidebar__row-article__item">
+						<a href="index.php?page=page&action=read&id={{p.id}}">
+							<h3>{{p.nom}}</h3>
+						</a>
+						<ul class="sectionChimere__sidebar__row-article__item__list">
+							{% for a in articles %}
+								{% if a.id_page == p.id %}
+									<li>
+										<a href="index.php?page=page&action=read&id={{p.id}}">
+											{{a.nom}}
+										</a>
+									</li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="sectionChimere__sidebar__absolute-gradient"></div>
+		</div>
+			<img src="./public/svg/burger_menu.svg" alt="=" id="sideBarMenu">
+
+		<div class="sectionChimere__container">
+		<div>
+			<a href="index.php?page=page&action=read&id=1">
+				<img src="./public/svg/chimere.svg" alt="">
+			</a>
+		</div>
+		<div class="sectionChimere__resume">
+			<h2>FEMMES ET LGBT +</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+		</div>
+		</div>
+
+	</section> -->
+	</main>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+    <h1 class="form-h1">Créer un Article</h1>
+    <p class="form-chapo">Ici vous pouvez créer votre article</p>
+        <form action="index.php?page=media&action=upload" method="post" class="form" id="dynamicForm" enctype="multipart/form-data">
+            <input type="text" name="nom" placeholder="Nom du média">
+            <label for="imgUpload">Upload le média :</label>
+            <input type="file" id="imgUpload" name="media">
+            <div class="form__select">
+                <label for="datatype-select">Upload le média :</label>
+                <select name="datatype" id="datatype-select">
+                        <option value="img">Image</option>
+                        <option value="audio">Podcast</option>
+                        <option value="video">Vidéo</option>
+                </select>
+            </div>
+            <input type="submit" name="create" value="Créer">
+        </form>
+    </main>
+{% endblock main %}

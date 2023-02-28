@@ -1,0 +1,30 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+        <h1 class="h1">Voir tous nos articles</h1>
+        <p class="chapo">Vous trouverez ici tous les articles de notre blog !</p>
+        <div class="container-article" style="border : 1px solid black">
+            {% for a in articles %}
+                <div class="container-article__item">
+                    <div>
+                        <h2 class="container-article__item--h1">
+                            {{a.nom}}
+                        </h2>
+                        <div class="container-article__item--chapo">
+                            {{a.resume}}
+                        </div>
+                    </div>
+                    <div>
+                        <div class="container-article__item__action-container">
+                            <a href="index.php?page=article&action=read&id={{a.id}}" class="container-article__item__action-container__item"><img src="./public/svg/link.svg" alt="Voir"></a>
+                            <a href="index.php?page=article&action=edit&id={{a.id}}" class="container-article__item__action-container__item"><img src="./public/svg/edit.svg" alt="Modifier"></a>
+                            <a href="index.php?page=article&action=delete&id={{a.id}}" class="container-article__item__action-container__item"><img src="./public/svg/delete.svg" alt="Supprimer"></a> 
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="index.php?page=article&action=new" class="link-add"><img src="./public/svg/add.svg" alt="+"></a>
+    </main>
+{% endblock main %}

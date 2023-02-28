@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+        <h1 class="h1">Voir tous les élements</h1>
+        <p class="chapo">Vous trouverez ici tous les élements de notre blog !</p>
+        <div class="container-elements">
+            {% for e in elements %}
+                <div class="container-elements__item">
+                    <div class="container-elements__item__represent container-elements__item__represent--{{e.balise}}" id="cutText">
+                        {% if e.balise == "img" %}
+                            <img src="{{e.src}}" alt="Image">
+                        {% else %}
+                            {{e.text}}
+                        {% endif %}
+                    </div>
+                    <div class="container-elements__item__action">
+                        <a href="index.php?page=element&action=read&id={{e.id}}"><img src="./public/svg/link.svg" alt="Voir"></a>
+                        <a href="index.php?page=element&action=edit&id={{e.id}}"><img src="./public/svg/edit.svg" alt="Modifier"></a>
+                        <a href="index.php?page=element&action=delete&id={{e.id}}"><img src="./public/svg/delete.svg" alt="Supprimer"></a> 
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="index.php?page=element&action=new" class="link-add"><img src="./public/svg/add.svg" alt="+"></a>
+    </main>
+{% endblock main %}

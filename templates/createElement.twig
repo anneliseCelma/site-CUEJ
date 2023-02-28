@@ -1,0 +1,57 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+        <h1 class="form-h1">Créer un Element</h1>
+        <p class="form-chapo">Visualiser en direct votre Element !</p>
+        <div class="pre-visual">
+            <div class="pre-visual__item" id="dynamicElement"></div>
+        </div>
+        <form action="index.php?page=element&action=create" method="post" class="form" id="dynamicForm">
+            <div class="form__select">
+                <label for="balise-select">Choisir le type de l'élement</label>
+                <select name="balise" id="balise-select">
+                    <option value="p">Paragraphe</option>
+                    <option value="img">Image</option>
+                    <option value="video">Vidéo</option>
+                    <option value="audio">Podcast</option>
+                    <option value="img-background">Image pleine taille</option>
+                    <option value="a">Lien</option>
+                    <option value="blockquote">Citation</option>
+                    <option value="h2">Titre 2</option>
+                    <option value="h3">Titre 3</option>
+                    <option value="h4">Titre 4</option>
+                </select>
+            </div>
+            <div class="form__select">
+                <label for="article-select">Choisis l'article lié selon son titre</label>
+                <select name="id_article" id="article-select">
+                    {% for a in articles %}
+                        <option value="{{a.id}}">{{a.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form__select">
+                <label for="style-select">Appliquer un style supplementaire :</label>
+                <select name="id_classe" id="class-select">
+                    <option value="">-- Aucune classe selectionnée --</option>
+                    {% for c in classes %}
+                        <option value="{{c.id}}" data-classname="{{c.nom}}">{{c.label}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form__select">
+                <label for="media-select">Choisissez l'image reliée selon son nom</label>
+                <select name="id_media" id="media-select">
+                    <option value="">--Aucune Image--</option>
+                    {% for m in medias %}
+                        <option value="{{m.id}}">Fichier {{m.datatype}} : {{m.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <input type="text" name="contenu" id="toAnalyseInput" placeholder="Saisir le contenu de l'élement">
+            <input type="text" name="href" id="toAnalyseInput" placeholder="Insérer un lien ou un crédit">
+            <input type="submit" name="create" value="Créer">
+        </form>
+    </main>
+{% endblock main %}

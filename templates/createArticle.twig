@@ -1,0 +1,40 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+    <h1 class="form-h1">Créer un Article</h1>
+    <p class="form-chapo">Ici vous pouvez créer votre article</p>
+        <form action="index.php?page=article&action=create" method="post" class="form">
+            <input type="text" name="nom" placeholder="Titre de l'article">
+            <input type="text" name="chapo" placeholder="Sous Titre de l'Article">
+            <div class="form__select">
+                <label for="media-select">Choisissez l'image representative de l'article selon son nom</label>
+                <select name="id_media" id="media-select">
+                    <option value="">--Aucune Image--</option>
+                    {% for m in medias %}
+                        <option value="{{m.id}}">Fichier {{m.datatype}} : {{m.nom}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form__select">
+            <label for="page-select">Choisissez la page parente de l'article</label>
+            <select name="id_page" id="page-select">
+                {% for p in pages %}
+                    <option value="{{p.id}}">{{p.nom}}</option>
+                {% endfor %}
+            </select>
+            </div>
+                <div class="form__color">
+                {% for c in couleurs %}
+                    {# une fonction en js qui recupere la valeur de "placholderColor" et créer une div avec ce fond #}
+                    <label for="{{c.id}}" class="container">{{c.nom}}
+                        <input type="radio" id="{{c.id}}" name="id_couleur" data-color="{{c.hex}}" value="{{c.id}}" data-checked="0">
+                        <span class="checkmark"></span>
+                    </label>
+                {% endfor %}
+            </div>
+            <input type="text" name="auteur" placeholder="Auteur de l'Article">
+            <input type="submit" name="create" value="Créer">
+        </form>
+    </main>
+{% endblock main %}

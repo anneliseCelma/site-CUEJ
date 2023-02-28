@@ -1,0 +1,70 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content  "> 
+    <div class="progress">
+        <div class="progress__bar" id="progressBar"></div>
+    </div>
+        <div class="action-button">
+            <a href="./index.php?page=article&action=read"><img src="./public/svg/chevron_left.svg" alt="<"></a>
+            <div class="action-button--right">
+                <a href="index.php?page=article&action=editArticle&id={{article.id}}" class="action-button--right__alter">Modifier l'article</a> 
+                <a href="index.php?page=article&action=read&id={{article.id}}"><img src="./public/svg/link.svg" alt="Voir"></a>
+                <a href="index.php?page=article&action=delete&id={{article.id}}"><img src="./public/svg/delete.svg" alt="Supprimer"></a> 
+            </div>
+        </div>
+        <div class="article">
+            <h1 class="article__h1">{{article.nom}}</h1>
+            <p class="article__chapo">{{article.chapo}}</p>
+            <div class="article__container">
+                {% for e in elements %}
+                    <div class="article__container__item">
+                        <div class="article__container__item__action">
+                            <a href="index.php?page=element&action=edit&id={{e.id}}"><img src="./public/svg/edit.svg" alt="Modifier"></a>
+                            <a href="index.php?page=element&action=delete&id={{e.id}}"><img src="./public/svg/delete.svg" alt="Modifier"></a>
+                        </div>
+                        {{dump(e)}}
+
+                        {# Item generator #}
+                        {% if e.balise == 'h1' %}
+                            <h1 class="article__container__item--h1 {{e.nom_classe}}">{{e.contenu}}</h1>
+                        {% elseif e.balise == 'h2' %}
+                            <h2 class="article__container__item--h2 {{e.nom_classe}}">{{e.contenu}}</h2>
+                        {% elseif e.balise == 'h3' %}
+                            <h3 class="article__container__item--h3 {{e.nom_classe}}">{{e.contenu}}</h3>
+                        {% elseif e.balise == 'h4' %}
+                            <h4 class="article__container__item--h4 {{e.nom_classe}}">{{e.contenu}}</h4>
+                        {% elseif e.balise == 'p' %}
+                            <p class="article__container__item--p {{e.nom_classe}}">{{e.contenu|raw|nl2br}}</p>
+                        {% elseif e.balise == 'a' %}
+                            <a href="{{e.href}}" class="article__container__item--a {{e.nom_classe}}">{{e.contenu}}</a>
+                        {% elseif e.balise == 'img' and e.contenu != null %}
+                            <figure class="article__container__item--figure {{e.nom_classe}}">
+                                <img class="article__container__item--figure__img" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}">
+                                <figcaption class="article__container__item--figure__caption">{{e.contenu}}</figcaption>
+                            </figure>
+                        {% elseif e.balise == 'img' %}
+                            <img class="article__container__item--img {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}">
+                        {% elseif e.balise == 'img-background' %}
+                            <img class="article__container__item--img-background {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}" id="imgBackground">
+                        {% elseif e.balise == 'blockquote' %}
+                            <blockquote cite="{{e.href}}" class="article__container__item--blockquote {{e.nom_classe}}">{{e.contenu|raw|nl2br}}</blockquote>
+                        {% elseif e.balise == 'video' %}
+                            <video class="article__container__item--video {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" controls></video>
+                        {% elseif e.balise == 'audio' %}
+                            <audio class="article__container__item--audio {{e.nom_classe}}"  src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" controls></audio>
+                        {# {% elseif e.balise == 'iframe' %}
+                            <iframe class="article__container__item--iframe {{e.nom_classe}}" src="{{e.contenu}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> #}
+                        {% endif %}
+                    </div>
+                    <div class="generated__order">
+                        <a href="index.php?page=element&action=up&id={{e.id}}&order={{e.ordre}}&id_article={{e.id_article}}"><img src="./public/svg/chevron_up.svg" alt="Monter"></a>
+                        <a href="index.php?page=element&action=down&id={{e.id}}&order={{e.ordre}}&id_article={{e.id_article}}"><img src="./public/svg/chevron_down.svg" alt="Descendre"></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="index.php?page=element&action=new"><img src="./public/svg/add.svg" alt="+">Ajouter un element</a>
+            <p class="article__description">Auteur : {{article.auteur}}</p>
+        </div>
+    </main>
+{% endblock main %}

@@ -1,0 +1,273 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+<main class="full-width">
+    <div class="progress">
+        <div class="progress__bar" id="progressBar"></div>
+    </div>
+    <section class="mainSection">
+
+        <div class="article">
+            <header class="article__header" style="background-image : url('./uploads/{{article.media_datatype}}/{{article.media_nom}}')">
+                <div class="article__header__content">
+                    <h1>{{article.nom}}</h1>
+                    <p>{{article.chapo}}</p>
+                    <hr>
+                    <p class="article__header__content__auteur">{{article.auteur}}</p>
+                </div>
+            </header>
+            <div class="article__container">
+                {% for e in elements %}
+                    <div class="article__container__item">
+                        {# Item generator #}
+                        {% if e.balise == 'h1' %}
+                            <h1 class="article__container__item--h1 {{e.nom_classe}}">{{e.contenu}}</h1>
+                        {% elseif e.balise == 'h2' %}
+                            <h2 class="article__container__item--h2 {{e.nom_classe}}">{{e.contenu}}</h2>
+                        {% elseif e.balise == 'h3' %}
+                            <h3 class="article__container__item--h3 {{e.nom_classe}}">{{e.contenu}}</h3>
+                        {% elseif e.balise == 'h4' %}
+                            <h4 class="article__container__item--h4 {{e.nom_classe}}">{{e.contenu}}</h4>
+                        {% elseif e.balise == 'p' %}
+                            <p class="article__container__item--p {{e.nom_classe}}">{{e.contenu|raw|nl2br}}</p>
+                        {% elseif e.balise == 'a' %}
+                            <a href="{{e.href}}" class="article__container__item--a {{e.nom_classe}}">{{e.contenu}}</a>
+                        {% elseif e.balise == 'img' and e.contenu != null %}
+                            <figure class="article__container__item--figure {{e.nom_classe}}">
+                                <img class="article__container__item--figure__img" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}">
+                                <figcaption class="article__container__item--figure__caption">{{e.contenu}}</figcaption>
+                            </figure>
+                        {% elseif e.balise == 'img' %}
+                            <img class="article__container__item--img {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}">
+                        {% elseif e.balise == 'img-background' %}
+                            <img class="article__container__item--img-background {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" alt="{{e.media_nom}}" id="imgBackground">
+                        {% elseif e.balise == 'blockquote' %}
+                            <blockquote cite="{{e.href}}" class="article__container__item--blockquote {{e.nom_classe}}">{{e.contenu|raw|nl2br}}</blockquote>
+                        {% elseif e.balise == 'video' %}
+                            <video class="article__container__item--video {{e.nom_classe}}" src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" controls></video>
+                        {% elseif e.balise == 'audio' %}
+                            <audio class="article__container__item--audio {{e.nom_classe}}"  src="./uploads/{{e.media_datatype}}/{{e.media_nom}}" controls></audio>
+                        {# {% elseif e.balise == 'iframe' %}
+                            <iframe class="article__container__item--iframe {{e.nom_classe}}" src="{{e.contenu}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> #}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+            <p class="article__description">Auteur : {{article.auteur}}</p>
+        </div>
+
+
+  <section class="themeSection">            
+      <h1 class="themeSection__title">LAÏCITE</h1>
+          <p class="themeSection__chapo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.
+          </p>
+  </section>
+
+  <section class="titleArtSection">
+    <div class="titleArtSection__colorRectangle"></div>
+    <h2 class="titleArtSection__title">Perissent responderunt perissent ordinis lorem ipsum</h2>
+    <p class="titleArtSection__chapo">Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti.</p>
+    <p class="titleArtSection__auteur">Auteur</p>
+</section>
+
+
+
+<section class="article__container__item sectionText">
+      <div class="sectionText__text">
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <h3>Intertitre lorem ipsum ipsum ipsum kloloteni</h3>
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+      </div>
+    
+    <p class="sectionText__exergue">Ceci est une exergue très exergue lorem ipsum psum pomum</p>
+      
+      
+      <div class="sectionText__text">
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+
+          <h3>Intertitre lorem ipsum ipsum ipsum kloloteni</h3>
+
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+      </div>
+
+
+</section>
+
+<section class="sectionDiaporama">
+  <div>
+      <div class="sectionDiaporama__slider-wrapper">
+          <h2 class="sectionDiaporama__title">Perissent responderunt perissent ordinis lorem ipsum</h2>
+          <p class="sectionDiaporama__chapo">Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti.</p>
+          <p class="sectionDiaporama__auteur">John Doe</p>
+
+        <div class="sectionDiaporama__slider">
+          <img src="/public/svg/background.svg" alt="" id="slide-1">
+          <img src="/public/svg/background.svg" alt="" id="slide-2">
+          <img src="/public/svg/background.svg" alt="" id="slide-3">
+          <img src="/public/svg/background.svg" alt="" id="slide-4">
+          <img src="/public/svg/background.svg" alt="" id="slide-5">
+        </div>
+        <div class="sectionDiaporama__slider-nav">
+          <a href="#slide-1" for="radio1"></a>
+          <a href="#slide-2" for="radio1"></a>
+          <a href="#slide-3" for="radio1"></a>
+          <a href="#slide-4" for="radio1"></a>
+          <a href="#slide-5" for="radio1"></a>
+
+        </div>
+      </div>
+
+  </div>
+
+</section>
+
+<section class="sectionVideo">
+  <video class="sectionVideo__video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+    <source src="" type="video/mp4">
+   </video>
+
+   <div class="sectionVideo__colorRectangle"></div>
+
+
+  <h2 class="sectionVideo__title">Perissent responderunt perissent ordinis lorem ipsum</h2>
+  <p class="sectionVideo__chapo">Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti.</p>
+ <div class="border-white"></div>
+  <p class="sectionVideo__auteur">John Doe</p>
+
+</section>
+
+
+
+<section class="sectionTitle">
+
+  <div class="sectionTitle__colorRectangle"></div>
+
+
+
+      <h2 class="sectionTitle__title">Perissent responderunt perissent ordinis lorem ipsum</h2>
+      <p class="sectionTitle__chapo">Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti.</p>
+      <p class="sectionTitle__auteur">John Doe</p>
+
+
+</section>
+
+
+<section class="sectionPortrait">
+
+  <div class="sectionPortrait__wrap">
+      <div class="sectionPortrait__text">
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+
+          <h3>Intertitre lorem ipsum ipsum ipsum kloloteni</h3>
+
+          <p>Perissent ordinis perissent responderunt et unum cum quod elogio uno cum responderunt fixa ni Honoratus tunc tunc iussit cum rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+          <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno.</p>
+      </div>
+  </div>
+
+  <div class="sectionPortrait__container">
+      <div class="card1">
+          <div class="card-container">
+              <div class="card">
+                <div class="front face">
+                  <figure>
+                       <img src="/public/svg/portrait.svg"/>
+                       <figcaption>Laurel</figcaption>
+                  </figure>
+                </div>
+                <div class="back face center">
+                  <div class="citation">
+                      <p>exergue</p>
+                  </div>
+                </div>
+              </div>
+
+              </div>
+              <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno. </p>
+              <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno. </p>
+      </div>
+
+      <div class="card2">
+          <div class="card-container">
+              <div class="card">
+                <div class="front face">
+                  <figure>
+                       <img src="/public/svg/portrait.svg"/>
+                       <figcaption>Laurel</figcaption>
+                  </figure>
+                </div>
+                <div class="back face center">
+                  <div class="citation">
+                      <p>exergue</p>
+                  </div>
+                </div>
+              </div>
+
+              </div>
+              <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno. </p>
+              <p>rationabili inpenderet ei quod efferatus constantia urgenti efferatus sub elogio tunc inpenderet restitisset responderunt intempestivam comes Antiochensis responderunt fixa ad tunc intempestivam restitisset vilitatem quod iussit et ni unum efferatus uno. </p>
+      </div>
+  </div>
+
+</section>
+
+<section class="sectionSuggestions">
+  <h4>Vous pourriez aimer aussi</h4>
+  <div class="sectionSuggestions__suggestion">
+      <div class="sectionSuggestions__rectanglerose"></div>
+
+      <h4>FEMMES ET LGBT+</h4>
+  </div>
+  <div class="sectionSuggestions__suggestion">
+      <div class="sectionSuggestions__rectangleviolet"></div>
+
+      <h4>CONSERVATEURS</h4>
+  </div>
+
+
+</section>
+
+
+
+ {# <div class="action-button">
+        <a href="./index.php?page=article"><img src="./public/svg/chevron_left.svg" alt="<"></a>
+        <a href="./index.php?page=article&action=edit&id={{article.id}}"><img src="./public/svg/edit.svg" alt="modifier"></a>
+    </div>
+    {{dump(elements)}}
+    <div class="visual-element">
+        <h1 class="generated--h1">{{article.nom}}</h1>
+        <p class="generated--chapo">{{article.resume}}</p>
+        {% for e in elements %}
+            <div class="generated">
+                {# {% if e.balise == "img" and e.text is not empty %}
+                    <figure class="generated--figure" {% if e.css is not empty %}style="{{e.css}}"{% endif %}>
+                        <{{e.balise}} src="{{e.src}}" alt="{{e.alt}}" class="">
+                        <figcaption>{{e.text}}</figcaption>
+                    </figure>
+                {% elseif e.balise == "img" %}
+                    <{{e.balise}} src="{{e.src}}" alt="{{e.alt}}" {% if e.css is not empty %}style="{{e.css}}"{% endif %}>
+                {% elseif e.balise == "a" %}
+                    <{{e.balise}} href="{{e.href}}" class="generated--{{e.balise}}">
+                        {{e.text}}
+                    </{{e.balise}}>
+                {% elseif e.balise == "blockquote" %}
+                    <{{e.balise}} class="generated--{{e.balise}}" {% if e.href is not empty %}cite="{{e.href}}"{% endif %}>
+                        <p>{{e.text}}</p>
+                    </{{e.balise}}>
+                {% else %} 
+                    <{{e.balise}} class="generated--{{e.balise}}"  {% if e.style is not empty %}style="{{e.style}}"{% endif %}>{{e.contenu}}</{{e.balise}}>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <div class="generated__description">
+            <p class="generated__description--author">Auteur : {{article.auteur}}</p>
+            <p class="generated__description--date">{{article.date}}</p>
+        </div>
+    </div>  #}
+</main>
+{% endblock main %}

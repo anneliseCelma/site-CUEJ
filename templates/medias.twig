@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block main %}
+    <main class="container-content"> 
+        <div class="container-medias" style="border : 1px solid black">
+            {% for m in medias %}
+            <div class="container-medias__item">
+                <img src="./uploads/{{m.datatype}}/{{m.nom}}" alt="{{m.nom}}">
+                <a href="index.php?page=media&action=delete&id={{m.id}}" class="container-medias__item__delete"><img src="./public/svg/delete.svg" alt="X"></a>
+                <p>{{m.nom}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="index.php?page=media&action=new" class="link-add"><img src="./public/svg/add.svg" alt="+"></a>
+    </main>
+{% endblock main %}
