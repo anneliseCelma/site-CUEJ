@@ -1,0 +1,1232 @@
+@charset "UTF-8";
+@import './utils/reset.css';
+/*
+    Base
+*/
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,200;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,300;0,400;0,500;0,700;0,900;1,200;1,300;1,400&display=swap");
+@font-face {
+  font-family: "Satoshi";
+  src: url("../public/fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/public/Satoshi-Variable.woff") format("woff"), url("../fonts/public/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+/* ------------------------------ VARIABLES ------------------------------ */
+/* Couleurs principales */
+/* Font-weight */
+/*
+    Exports
+*/
+.pre-visual__item--p {
+  font-size: 1rem;
+}
+.pre-visual__item--blockquote {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Satoshi";
+  position: relative;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.pre-visual__item--blockquote::before {
+  font-family: "Satoshi";
+  content: "“";
+  color: #78C0A8;
+  font-size: 4em;
+  position: absolute;
+  left: 110px;
+  top: -33px;
+  z-index: -1;
+}
+.pre-visual__item--h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Satoshi";
+}
+.pre-visual__item--h2::before {
+  content: "";
+  border-left: 6px solid #E89DB6;
+  padding-right: 10px;
+}
+.pre-visual__item--a {
+  font-size: 1rem;
+  color: black;
+}
+.pre-visual__item--a:hover {
+  color: blue;
+}
+
+q {
+  font-style: italic;
+}
+
+b {
+  font-weight: 700;
+}
+
+.class-test {
+  color: red;
+}
+
+.scd-class-test {
+  color: blue;
+}
+
+.img-petit-right {
+  width: 25%;
+  float: right;
+}
+
+.img-petit_left {
+  width: 25%;
+  float: left;
+}
+
+.img-moyen {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  display: block;
+}
+
+/*
+    Elements
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  font-weight: 400;
+  font-size: 1.18rem;
+}
+
+main.container-content {
+  width: 1040px;
+  margin: 0 auto;
+}
+
+main.full-width {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-medias {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.container-medias__item img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.container-medias__item p {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.container-medias__item__delete {
+  cursor: pointer;
+  position: relative;
+  left: -50%;
+  padding: 5px;
+  background: rgb(255, 255, 255);
+  max-width: 100%;
+}
+
+/*
+    Components
+*/
+/* SECTION 1 */
+.sectionChurch {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../public/img/notre_dame_white.png");
+  background-attachment: fixed, scroll;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: bottom 0px right 200px;
+  background-size: 40%;
+  transition: 0.5s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 500px) {
+  .sectionChurch {
+    background-position: bottom 470px right 100px;
+    background-size: 50%;
+  }
+}
+.sectionChurch__title {
+  font-family: "Satoshi";
+  font-size: 6.25rem;
+  font-weight: 900;
+  width: 500px;
+  position: absolute;
+  left: 100px;
+  top: 50vh;
+  transform: translateY(-50%);
+  line-height: 6.5rem;
+}
+@media (max-width: 500px) {
+  .sectionChurch__title {
+    font-size: 4.5rem;
+    line-height: 5.5rem;
+    top: 300px;
+    left: 80px;
+  }
+}
+@media (min-width: 768px) {
+  .sectionChurch__title {
+    font-size: 5rem;
+    line-height: 6.5rem;
+  }
+}
+@media (min-width: 1920px) {
+  .sectionChurch__title {
+    font-size: 7.2rem;
+  }
+}
+.sectionChurch__floatingSquare {
+  right: 40%;
+  width: 600px;
+  height: 400px;
+  background: linear-gradient(229.58deg, rgba(109, 218, 232, 0.5) 19.27%, rgba(241, 12, 245, 0.5) 100%);
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  bottom: 30%;
+  transform: translateY(50%);
+  z-index: -1;
+}
+@media (max-width: 500px) {
+  .sectionChurch__floatingSquare {
+    left: 80px;
+    width: 400px;
+    height: 300px;
+    top: 330px;
+  }
+}
+.sectionChurch__floatingSquare__arrowAnim {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+.sectionChurch__floatingSquare__arrowAnim__arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 3s linear infinite;
+  animation: slide 3s linear infinite;
+}
+.sectionChurch__floatingSquare__arrowAnim__arrow {
+  width: 2.5vw;
+  height: 2.5vw;
+  border: 0.7vw solid;
+  border-color: rgb(255, 255, 255) transparent transparent rgb(255, 255, 255);
+  transform: rotate(-136deg);
+}
+.sectionChurch__floatingSquare__arrowAnim__delay1 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.sectionChurch__floatingSquare__arrowAnim__delay2 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.sectionChurch__floatingSquare--border {
+  border: 1px solid #000;
+  position: absolute;
+  border-style: dashed;
+  width: 600px;
+  height: 400px;
+  right: 40%;
+  max-width: 80%;
+  position: absolute;
+  bottom: 30%;
+  transform: translateY(50%);
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-3vw);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(3vw);
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-3vw);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(3vw);
+  }
+}
+.vertical-text {
+  overflow: hidden;
+}
+@media (max-width: 500px) {
+  .vertical-text {
+    display: none;
+  }
+}
+.vertical-text__text {
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  right: 0;
+  top: 50vh;
+  transform: translateY(-50%);
+  overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 1rem;
+}
+.vertical-text__text--white {
+  color: white;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  right: 0;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+.vertical-text__number {
+  font-family: "Satoshi";
+  font-size: 4rem;
+  font-weight: 900;
+}
+
+/* SECTION 2 */
+.sectionEdito {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../public/img/notre_dame_reversed.png"), url("../public/svg/sun_text.svg");
+  background-attachment: fixed, local;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-position: bottom 0px right 200px, top 100px right calc(200px + 10%);
+  background-size: 40%, 25%;
+  transition: 0.5s ease-in-out;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all 1s ease-in-out;
+}
+.sectionEdito__div {
+  width: 60%;
+  color: #fff;
+  background-color: rgba(23, 23, 23, 0.75);
+  padding: 1.8rem;
+  margin-left: 150px;
+}
+.sectionEdito__div__title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.sectionEdito__div__text {
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+/* SECTION 3 */
+.sectionChimere {
+  background: linear-gradient(270deg, #6DCCE8 7.1%, #F10CF5 81.22%);
+  width: 100%;
+  height: 100vh;
+}
+.sectionChimere img {
+  padding: 64px;
+  cursor: pointer;
+}
+.sectionChimere__sidebar {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 8rem;
+  left: -100vw;
+  transition: all 0.3s ease-in;
+}
+.sectionChimere__sidebar--show {
+  left: 0;
+}
+.sectionChimere__sidebar img {
+  position: absolute;
+  padding: 4rem;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.sectionChimere__sidebar__row-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sectionChimere__sidebar__row-home h4 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.sectionChimere__sidebar__row-home p {
+  line-height: 2rem;
+}
+.sectionChimere__sidebar hr {
+  width: 1px;
+  background-color: #fff;
+  height: 100%;
+}
+.sectionChimere__sidebar__row-article {
+  margin: auto 0;
+  margin-left: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 8rem;
+  grid-row-gap: 6rem;
+}
+.sectionChimere__sidebar__row-article a {
+  color: #fff;
+  text-decoration: none;
+}
+.sectionChimere__sidebar__row-article a:hover {
+  text-decoration: underline;
+}
+.sectionChimere__sidebar__row-article__item {
+  margin: 1rem 0;
+}
+.sectionChimere__sidebar__row-article__item h3 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.sectionChimere__sidebar__row-article__item__list li {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: none;
+}
+.sectionChimere__sidebar__row-article__item p {
+  line-height: 2rem;
+}
+.sectionChimere__sidebar__absolute-gradient {
+  position: absolute;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+.sectionChimere__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sectionChimere__container h2 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+.sectionChimere__container p {
+  line-height: 1.75rem;
+}
+.sectionChimere__resume {
+  width: 60%;
+}
+
+/* SECTION 1 */
+.themeSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/public/svg/background.svg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.themeSection__title {
+  font-weight: 900;
+  font-family: "Satoshi";
+  font-size: 6.25rem;
+  width: 500px;
+  margin-left: 12rem;
+  background: -webkit-linear-gradient(90deg, rgb(232, 157, 182) 0%, rgb(232, 157, 182) 3%, rgb(235, 158, 154) 37%, rgb(239, 159, 122) 59%, rgb(244, 160, 74) 100%, rgb(0, 212, 255) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.themeSection__chapo {
+  width: 50%;
+  color: #fff;
+  margin-left: 12rem;
+  line-height: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.form__select {
+  display: flex;
+  flex-direction: column;
+}
+.form__color {
+  display: flex;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+.form__color label {
+  display: block;
+}
+.form select, .form input {
+  padding: 1rem;
+  border: 1px solid #000;
+}
+.form [type=submit] {
+  background: #F4A04A;
+  border: none;
+  color: #fff;
+}
+
+.pre-visual {
+  border: 1px dashed #000;
+  padding: 1rem;
+  width: 100%;
+  font-family: "Epilogue", sans-serif;
+  font-weight: 400;
+}
+.pre-visual__item {
+  font-size: 1rem;
+  min-height: 50px;
+  max-width: 1040px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.form-h1 {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 3rem;
+  color: #000;
+  padding-top: 1rem;
+}
+
+.form-chapo {
+  font-size: 1.5rem;
+  line-height: 3rem;
+  padding-top: 1rem;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  /* display: none; */
+  background: #eee;
+}
+
+/* Show the checkmark when checked */
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 4px solid rgba(74, 74, 236, 0);
+}
+
+/* On mouse-over, add a grey background color */
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark {
+  border: 4px solid rgb(45, 128, 223);
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  display: none;
+}
+
+/* SECTION 1 */
+.themeSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/public/svg/background.svg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+}
+.themeSection__title {
+  font-weight: 900;
+  font-family: "Satoshi";
+  font-size: 6.25rem;
+  width: 500px;
+  margin-left: 12rem;
+  background: -webkit-linear-gradient(90deg, rgb(232, 157, 182) 0%, rgb(232, 157, 182) 3%, rgb(235, 158, 154) 37%, rgb(239, 159, 122) 59%, rgb(244, 160, 74) 100%, rgb(0, 212, 255) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.themeSection__chapo {
+  width: 50%;
+  color: #fff;
+  margin-left: 12rem;
+  line-height: 2rem;
+}
+
+/* SECTION 2 */
+.titleArtSection {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.58) 39.59%, rgba(255, 255, 255, 0) 100%), url(/public/svg/angel-church.svg);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.titleArtSection__colorRectangle {
+  height: 100vh;
+  width: 10%;
+  background: -webkit-linear-gradient(90deg, rgba(232, 157, 182, 0.35) 0%, rgba(232, 157, 182, 0.35) 3%, rgba(235, 158, 154, 0.75) 37%, rgba(239, 159, 122, 0.75) 59%, rgba(244, 160, 74, 0.35) 100%, rgba(0, 212, 255, 0.35) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.titleArtSection__title {
+  font-family: "Satoshi";
+  font-size: 3rem;
+  max-width: 35%;
+  color: #fff;
+  margin-left: 12rem;
+  font-weight: 900;
+  line-height: 3.8rem;
+}
+.titleArtSection__chapo {
+  width: 50%;
+  color: #fff;
+  margin-left: 12rem;
+  position: relative;
+  line-height: 1.85rem;
+}
+.titleArtSection__auteur {
+  width: 50%;
+  color: white;
+  margin-left: 12rem;
+  font-style: italic;
+  border-top: solid #fff 2px;
+  width: 13%;
+  padding-top: 0.8rem;
+}
+
+.sectionText {
+  padding: 50px 0;
+}
+.sectionText p {
+  margin-bottom: 1.6rem;
+  font-weight: 200;
+  line-height: 1.5rem;
+  font-family: "Epilogue", sans-serif;
+}
+.sectionText h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1.3rem;
+  border-left: 5px solid #E89DB6;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.sectionText__exergue {
+  text-align: center;
+  margin: 2.2rem auto;
+  position: relative;
+  width: 60%;
+  font-weight: 700 !important;
+  font-size: 1.7rem;
+  line-height: 2rem !important;
+  z-index: 10;
+}
+.sectionText__exergue:before {
+  content: url(/public/svg/guillemet.svg);
+  z-index: -10;
+  position: absolute;
+  top: -50px;
+  left: -20px;
+}
+
+.progress {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+}
+.progress__bar {
+  height: 5px;
+  background: #F10CF5;
+  width: 0%;
+  transition: width 0.2s;
+}
+
+.article__header {
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+.article__header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  width: 1040px;
+}
+.article__header__content * {
+  max-width: 722px;
+}
+.article__header__content h1 {
+  font-size: 4rem;
+  font-family: Satoshi;
+  font-weight: 700;
+  color: #fff;
+  line-height: 82px;
+}
+.article__header__content p {
+  font-size: 19px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Epilogue";
+  font-style: normal;
+  font-size: 19px;
+  line-height: 30px;
+}
+.article__header__content hr {
+  width: 200px;
+  height: 2px;
+  background-color: #fff;
+}
+.article__header__content__auteur {
+  font-style: italic;
+}
+.article__container__item {
+  margin: auto;
+  width: 70%;
+}
+.article__container__item--blockquote {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "Satoshi";
+  line-height: 2.5rem;
+  position: relative;
+  padding-left: 150px;
+  padding-right: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.article__container__item--blockquote::before {
+  font-family: "Satoshi";
+  content: "“";
+  color: #78C0A8;
+  font-size: 4em;
+  position: absolute;
+  left: 110px;
+  z-index: -1;
+}
+.article__container__item--h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: "Satoshi";
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+.article__container__item--h2::before {
+  content: "";
+  border-left: 6px solid #E89DB6;
+  padding-right: 10px;
+}
+.article__container__item--p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.article__container__item--a {
+  font-size: 1rem;
+  color: blue;
+}
+.article__container__item--a:hover {
+  color: #E89DB6;
+}
+.article__container__item--img {
+  border: 2px solid red;
+}
+.article__container__item--figure {
+  background-color: #F6CFC3;
+  padding: 20px 20px 30px 20px;
+}
+.article__container__item--figure__caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.sectionDiaporama {
+  width: 100%;
+}
+.sectionDiaporama__slider-wrapper {
+  position: relative;
+}
+.sectionDiaporama__title {
+  font-family: "Satoshi";
+  font-size: 2.5rem;
+  width: 500px;
+  position: absolute;
+  left: 100px;
+  margin-top: 40vh;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .sectionDiaporama__title {
+    font-size: 1.5rem;
+    width: 300px;
+    left: 20px;
+    margin-top: 18vh;
+  }
+}
+.sectionDiaporama__chapo {
+  position: absolute;
+  left: 100px;
+  margin-top: 65vh;
+  width: 50%;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .sectionDiaporama__chapo {
+    left: 20px;
+    margin-top: 33vh;
+    width: 60%;
+    font-size: 12px;
+  }
+}
+.sectionDiaporama__chapo::after {
+  content: "";
+  border-bottom: solid white 3px;
+  width: 60px;
+  padding: 20px;
+  left: 0;
+  position: absolute;
+}
+@media only screen and (max-width: 600px) {
+  .sectionDiaporama__chapo::after {
+    border-bottom: solid white 2px;
+    width: 50px;
+    padding: 12px;
+    left: 0;
+  }
+}
+.sectionDiaporama__auteur {
+  position: absolute;
+  left: 100px;
+  margin-top: 80vh;
+  width: 50%;
+  color: white;
+}
+@media only screen and (max-width: 600px) {
+  .sectionDiaporama__auteur {
+    position: absolute;
+    left: 20px;
+    margin-top: 45vh;
+    width: 50%;
+    font-size: 12px;
+  }
+}
+.sectionDiaporama__slider {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 16/9;
+  overflow-y: auto;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  box-shadow: 0 1.5rem 3rem -0.75rem hsla(0deg, 0%, 0%, 0.25);
+}
+.sectionDiaporama__slider::-webkit-scrollbar {
+  display: none;
+}
+.sectionDiaporama__slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.sectionDiaporama__slider-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  bottom: 10rem;
+  left: 90%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+@media only screen and (max-width: 600px) {
+  .sectionDiaporama__slider-nav {
+    bottom: 1.5rem;
+  }
+}
+.sectionDiaporama__slider-nav a {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 30px;
+  background-color: #fff;
+  opacity: 0.75;
+  transition: opacity ease 250ms;
+  transition: 1s;
+}
+.sectionDiaporama__slider-nav a:hover {
+  opacity: 1;
+  background-color: #E89DB6;
+}
+
+/* fin section 4 */
+/* section video */
+.sectionVideo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+}
+.sectionVideo__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -100;
+}
+.sectionVideo__colorRectangle {
+  height: 100vh;
+  width: 100px;
+  background: -webkit-linear-gradient(90deg, rgba(232, 157, 182, 0.35) 0%, rgba(232, 157, 182, 0.35) 3%, rgba(235, 158, 154, 0.75) 37%, rgba(239, 159, 122, 0.75) 59%, rgba(244, 160, 74, 0.35) 100%, rgba(0, 212, 255, 0.35) 100%);
+  float: right;
+}
+.sectionVideo__title {
+  font-family: "Satoshi";
+  font-size: 2.5rem;
+  width: 500px;
+  position: absolute;
+  left: 100px;
+  margin-top: 40vh;
+  color: white;
+}
+.sectionVideo__chapo {
+  position: absolute;
+  left: 100px;
+  margin-top: 65vh;
+  width: 50%;
+  color: white;
+}
+.sectionVideo__chapo::after {
+  content: "";
+  border-bottom: solid white 3px;
+  width: 60px;
+  padding: 20px;
+  left: 0;
+  position: absolute;
+}
+.sectionVideo__auteur {
+  position: absolute;
+  left: 100px;
+  margin-top: 80vh;
+  width: 50%;
+  color: white;
+}
+
+/* FIN section video */
+/* SECTION 2 */
+.sectionTitle {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/public/svg/angel-church.svg);
+  background-size: cover;
+}
+.sectionTitle__colorRectangle {
+  height: 100vh;
+  width: 100px;
+  background: -webkit-linear-gradient(90deg, rgba(232, 157, 182, 0.35) 0%, rgba(232, 157, 182, 0.35) 3%, rgba(235, 158, 154, 0.75) 37%, rgba(239, 159, 122, 0.75) 59%, rgba(244, 160, 74, 0.35) 100%, rgba(0, 212, 255, 0.35) 100%);
+  float: right;
+}
+.sectionTitle__title {
+  font-family: "Satoshi";
+  font-size: 2.5rem;
+  width: 500px;
+  position: absolute;
+  left: 100px;
+  margin-top: 40vh;
+  color: white;
+}
+.sectionTitle__chapo {
+  position: absolute;
+  left: 100px;
+  margin-top: 65vh;
+  width: 50%;
+  color: white;
+}
+.sectionTitle__chapo::after {
+  content: "";
+  border-bottom: solid white 3px;
+  width: 60px;
+  padding: 20px;
+  left: 0;
+  position: absolute;
+}
+.sectionTitle__auteur {
+  position: absolute;
+  left: 100px;
+  margin-top: 80vh;
+  width: 50%;
+  color: white;
+}
+
+/* SECTION portrait */
+.sectionPortrait__text {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.sectionPortrait__container {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+}
+.sectionPortrait__wrap {
+  margin: auto;
+  width: 70%;
+}
+
+.card-container {
+  position: relative;
+  width: 336px;
+  height: 403px;
+  z-index: 1;
+}
+
+.card-container {
+  perspective: 1000;
+}
+.card-container:hover .card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s linear;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.face.front {
+  background: linear-gradient(90deg, rgb(232, 157, 182) 0%, rgb(232, 157, 182) 3%, rgb(235, 158, 154) 37%, rgb(239, 159, 122) 59%, rgb(244, 160, 74) 100%, rgb(0, 212, 255) 100%);
+}
+
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(232, 157, 182) 0%, rgb(232, 157, 182) 3%, rgb(235, 158, 154) 37%, rgb(239, 159, 122) 59%, rgb(244, 160, 74) 100%, rgb(0, 212, 255) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+figure {
+  text-align: center;
+  padding: 19px 19px 85px 19px;
+}
+figure img {
+  width: 100%;
+}
+
+.card1, .card2 {
+  width: 40%;
+}
+
+.sectionSuggestions {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  padding-top: 100px;
+}
+.sectionSuggestions__suggestion {
+  /* background-color: aqua; */
+  width: 250px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  gap: 1rem;
+  padding: 5px;
+  align-items: center;
+}
+.sectionSuggestions__rectanglerose {
+  width: 25px;
+  height: 100%;
+  background: -webkit-linear-gradient(90deg, rgba(232, 157, 182, 0.35) 0%, rgba(232, 157, 182, 0.35) 3%, rgba(235, 158, 154, 0.75) 37%, rgba(239, 159, 122, 0.75) 59%, rgba(244, 160, 74, 0.35) 100%, rgba(0, 212, 255, 0.35) 100%);
+}
+.sectionSuggestions__rectangleviolet {
+  width: 25px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgb(109, 204, 232) 0%, rgb(241, 12, 245) 92%, rgb(241, 12, 245) 100%);
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("../public/fonts/Satoshi-Variable.woff2") format("woff2"), url("../fonts/public/Satoshi-Variable.woff") format("woff"), url("../fonts/public/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+/*
+    ScrollBar
+*/
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}/*# sourceMappingURL=app.css.map */
